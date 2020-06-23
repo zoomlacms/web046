@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="msapplication-TileColor" content="#1A0066"/>
+<meta name="msapplication-TileImage" content="/images/win8_symbol_140x140.png"/>
+<title>{$SiteName/}_首页</title>
+{$MetaKeywords/}
+{$MetaDescription/}
+{ZL:Boot()/}
+<link href="{$CssDir/}global.css?Version={ZL.Label id="前端样式版本号"/}" rel="stylesheet"/>
+<link href="/dist/css/animate.min.css" rel="stylesheet"/>
+<script src="/JS/jquery-ui.min.js"></script>
+<script src="/JS/Controls/ZL_Dialog.js"></script>
+<script src="/JS/Controls/B_User.js"></script>
+<script src="/Plugins/Ueditor/bar.config.js"></script>
+<script src="/Plugins/Ueditor/ueditor.all.min.js"></script>
+<script src="/Plugins/Ueditor/ueditor.js"></script>
+<link rel="stylesheet" href="/dist/css/weui.min.css" />
+</head>
+<body class="body_bac">
+
+<div class="order_top visible-xs" style="background:#f8f8f8; height:2em;">
+<div class="container">
+<div class="pull-right">
+<a href="/User/Login?ReturnUrl=/" class="user_login">登录</a>
+<a href="/User/Register" class="user_reg">注册</a>
+<a href="/User" class="user_cen"></a>
+<a href="javascript:;" onClick="LogoutFun();"  class="user_logout">退出</a>
+</div>
+</div>
+</div>
+<div class="home_nav" id="home_nav">
+<nav class="navbar navbar-default">
+<div class="container">
+<!-- Brand and toggle get grouped for better mobile display -->
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="/"><img src="{$CssDir/}images/logo.svg" alt="{$SiteName/}"/></a>
+</div>
+<!-- Collect the nav links, forms, and other content for toggling -->
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<ul class="nav navbar-nav">
+<li class="active"><a href="/">首页</a></li>
+<li><a href="{ZL:GetNodeLinkUrl(1)/}">官方新闻</a></li>
+<li><a href="{ZL:GetInfoUrl(2)/}">联系我们</a></li>
+<li>
+<form class="navbar-form navbar-left" role="search" action="/Search/SearchList">
+<div class="input-group">
+<input type="text" name="keyword" class="form-control" placeholder="请输入关键字">
+<span class="input-group-btn">
+<button class="btn" type="submit"><i class="fa fa-search"></i> 搜索</button>
+</span>
+</div><!-- /input-group -->
+</form>
+</li>
+</ul>
+</div><!-- /.navbar-collapse -->
+</div><!-- /.container-fluid -->
+</nav>
+</div>
+<!--头部结束-->
+<div class="container">
+<div class="home_top_pic">
+</div>
+<div role="tabpanel" class="home_tab">
+<!-- Nav tabs -->
+<ul class="nav nav-tabs home_class" role="tablist">
+<li role="presentation" class="active"><a role="tab" aria-expanded="false" aria-controls="message" href="#message" data-toggle="tab"  onClick="ChangeUrl(28);"><i class="fa fa-file-text-o"></i> 看帖</a></li>
+<li role="presentation"><a role="tab1" aria-expanded="true" aria-controls="message1" href="#message1" data-toggle="tab" onClick="ChangeUrl(29);"><i class="fa fa-star"></i> 招聘</a></li>
+<li role="presentation"><a role="tab2" aria-expanded="true" aria-controls="message2" href="#message2" data-toggle="tab" onClick="ChangeUrl(30);"><i class="fa fa-flag"></i> 交流</a></li>
+<li role="presentation"><a role="tab3" aria-expanded="true" aria-controls="message3" href="#message3" data-toggle="tab" onClick="ChangeUrl(31);"><i class="fa fa-dollar"></i> 攻略</a></li>
+<li role="presentation"><a role="tab4" aria-expanded="true" aria-controls="message4" href="#message4" data-toggle="tab" onClick="ChangeUrl(32);"><i class="fa fa fa-yen"></i> 悬赏</a></li>
+</ul>
+<!-- Tab panes -->
+<div class="row padding15">
+<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 padding0">
+<div class="tab-content">
+<div class="tab-pane active" id="message" role="tabpanel" data-id="28">
+<div class="home_video">
+<ul>
+{ZL.Label id="输出指定板块帖子_带视频" CateID="28" ShowNum="5" /}
+<div class="clearfix"></div>
+</ul>
+</div>
+{ZL.Label id="首页输出贴吧列表_不分页" ShowNum="20" CateID="28" /}
+<a href="javascript:;" class="show_more">查看更多 >></a>
+<input type="hidden" value="1" />
+</div><!--第一个循环区结束-->
+
+<div class="tab-pane" id="message1" role="tabpanel" data-id="29">
+<div class="home_video">
+<ul>
+{ZL.Label id="输出指定板块帖子_带视频" CateID="29" ShowNum="5" /}
+<div class="clearfix"></div>
+</ul>
+</div>
+{ZL.Label id="首页输出贴吧列表_不分页" ShowNum="20" CateID="29" /}
+<a href="javascript:;" class="show_more">查看更多 >></a>
+<input type="hidden" value="1" />
+</div><!--第二个循环区结束-->
+
+<div class="tab-pane" id="message2" role="tabpanel" data-id="30">
+<div class="home_video">
+<ul>
+{ZL.Label id="输出指定板块帖子_带视频" CateID="30" ShowNum="5" /}
+<div class="clearfix"></div>
+</ul>
+</div>
+{ZL.Label id="首页输出贴吧列表_不分页" ShowNum="20" CateID="30" /}
+<a href="javascript:;" class="show_more">查看更多 >></a>
+<input type="hidden" value="1" />
+</div><!--第三个循环区结束-->
+
+<div class="tab-pane" id="message3" role="tabpanel" data-id="31">
+<div class="home_video">
+<ul>
+{ZL.Label id="输出指定板块帖子_带视频" CateID="31" ShowNum="5" /}
+<div class="clearfix"></div>
+</ul>
+</div>
+{ZL.Label id="首页输出贴吧列表_不分页" ShowNum="20" CateID="31" /}
+<a href="javascript:;" class="show_more">查看更多 >></a>
+<input type="hidden" value="1" />
+</div><!--第四个循环区结束-->
+
+<div class="tab-pane" id="message4" role="tabpanel" data-id="32">
+<div class="home_video">
+<ul>
+{ZL.Label id="输出指定板块帖子_带视频" CateID="32" ShowNum="5" /}
+<div class="clearfix"></div>
+</ul>
+</div>
+{ZL.Label id="首页输出贴吧列表_不分页" ShowNum="20" CateID="32" /}
+<a href="javascript:;" class="show_more">查看更多 >></a>
+<input type="hidden" value="1" />
+</div><!--第五个循环区结束-->
+</div>
+</div>
+<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 padding0">
+<div class="home_r">
+<div class="home_sign">
+<div class="media">
+<div class="media-left media-middle"><i class="fa fa-calendar-check-o"></i></div>
+<div class="media-body media-middle">
+<p>{ZL:DateNow()/}</p>
+<a href="javascript:;" onClick="SinIn(this);">快速签到</a>
+</div>
+</div>
+</div>
+<div class="home_login">
+<input type="text" id="UName" class="form-control" onkeydown="return GetEnterCode('focus','UPSD');" placeholder="用户名" />
+<input type="password" id="UPSD" class="form-control" onkeydown="return GetEnterCode('click','home_ulogin_btn');" placeholder="密码" />
+<button class="btn btn-danger btn-block" id="home_ulogin_btn" type="button" onclick="LoginFun()" data-enter="3">登录</button>
+<a href="/User/Register" class="btn btn-default btn-block">立即注册</a>
+</div>
+<div class="home_logout">
+<a href="/User"><img src="." alt="" onerror="javascript:this.src='/images/userface/noface.png'" /></a>
+<h4></h4>
+<span class="home_point"></span><br/>
+<span class="home_exp"></span>
+<span class="home_purse"></span>
+<p class="home_dj"></p>
+<p>{ZL.Label id="获取当前登录会员勋章" /}</p>
+</div>
+<div class="home_user hidden-xs">
+<h4>会员排行</h4>
+<ul class="list-unstyled">
+{ZL.Label id="输出贴吧达人" ShowNum="9" /}
+<div class="clearfix"></div>
+</ul>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+<div class="home_addbar">
+<form action="/Bar/Post_Add?cateid=28&rurl=/" method="post">
+<input type="text" id="MsgTitle_T" name="MsgTitle_T" data-type="normal" class="form-control" placeholder="请输入标题">
+<textarea name="MsgContent_T" data-type="normal" style="height: 200px; width: 100%;" placeholder="说点什么吧..." id="txt_test" class="ueditor edui-default"></textarea>
+<div class="weui-btn-area">
+<button type="submit" id="PostMsg_Btn" class="btn btn-primary">发表主题</button>
+</div>
+</form>
+</div>
+
+<div class="home_footer">
+<div class="container">
+<p>
+<a href="{ZL:GetInfoUrl(1)/}">关于夜场吧</a>
+<a href="{ZL:GetInfoUrl(3)/}">使用条款</a>
+<a href="{ZL:GetInfoUrl(4)/}">隐私安全</a>
+<a href="{ZL:GetInfoUrl(5)/}">版权申明</a>
+<a href="{ZL:GetInfoUrl(2)/}">联系我们</a>
+<a href="{ZL:GetNodeLinkUrl(4)/}">友情链接</a>
+<a href="{ZL:GetNodeLinkUrl(5)/}">网站地图</a>
+</p>
+{$Copyright/}
+</div>
+</div>
+
+<div class="fatie"><a href="/EditContent?CateID=1&ID=-1"><i class=" fa fa-pencil-square-o"></i><br/>快速发帖</a></div>
+</div>
+</body>
+</html>
+<script src="/JS/Modal/APIResult.js"></script>
+<script>
+function SetImg(url) { $("#BarImage_img").attr("src", url); }
+$().ready(function () {
+    SetImg('/img/it.gif');
+    $(".subtitle img").click(function () {
+        var type = $(event.srcElement).attr("data-type");
+        switch (type) {
+            case "video":
+                ShowVideo();
+                break;
+            case "quotevideo":
+                ShowQVideo();
+                break;
+            default:
+                ShowImgView();
+                break;
+        }
+    });//click end;
+    $(".candrag").draggable({
+       addClasses: false,
+       axis: false,
+       cursor: 'crosshair',
+       containment: 'document'
+    });
+});
+
+//手机下右侧导航菜单效果
+$(function () {
+    $('button.navbar-toggle').click(function () {
+        $('body').toggleClass('out');
+        $('nav.navbar-fixed-top').toggleClass('out');
+        if ($('body').hasClass('out')) {
+            $(this).focus();
+        }
+        else {
+            $(this).blur();
+        }
+    });
+});
+$(document).click(function (e) {
+    if (!$(e.target).closest('.navbar-collapse, button.navbar-toggle').length && $('body').hasClass('out')) {
+        e.preventDefault();
+        $('button.navbar-toggle').trigger('click');
+    }
+}).keyup(function (e) {
+    if (e.keyCode == 27 && $('body').hasClass('out')) {
+        $('button.navbar-toggle').trigger('click');
+    }
+});
+
+//--------图片预览
+function ShowImgView() {
+    clearCurPreImg();
+    var pobj = $(event.srcElement).closest(".subtitle");
+    var id = pobj.attr("data-id");
+    pobj.find("img").hide();
+    $("#view_img_" + id).attr("src", $(event.srcElement).attr("src"));
+    $("#view_div_" + id).show();
+    curPreImg = event.srcElement;
+    $("#view_div_" + id).find(".view_preimg").click(function () { eachImg(id, 0) });
+    $("#view_div_" + id).find(".view_nextimg").click(function () { eachImg(id, 1); });
+    checkNextImg(id);
+}
+var curPreImg;//当前预览图
+//清空当前预览视图
+function clearCurPreImg() {
+    if (!curPreImg) return;
+    var pobj = $(curPreImg).closest(".subtitle");
+    var id = pobj.attr("data-id");
+    DisPreView($("#view_img_" + id));
+}
+//浏览多图片，action=0;上一张 action=1;下一张
+function eachImg(preid, action) {
+    var $li = $(curPreImg).parent();
+    if (action == 1 && $li.next().children().attr("src")) {
+        $("#view_img_" + preid).attr("src", $li.next().children().attr("src"));
+        curPreImg = $li.next().children()[0];
+    }
+    if (action == 0 && $li.prev().children().attr('src')) {
+        $("#view_img_" + preid).attr("src", $li.prev().children().attr("src"));
+        curPreImg = $li.prev().children()[0];
+    }
+    checkNextImg(preid);
+}
+//检查是否还有下一张(上一张)图片
+function checkNextImg(id) {
+    var $li = $(curPreImg).parent();
+    if (!$li.next()[0])
+        $("#view_div_" + id).find(".view_nextimg").hide();
+    else
+        $("#view_div_" + id).find(".view_nextimg").show();
+    if (!$li.prev()[0])
+        $("#view_div_" + id).find(".view_preimg").hide();
+    else
+        $("#view_div_" + id).find(".view_preimg").show();
+}
+function Collapse(id) {
+    DisPreView(event.srcElement);
+}
+//隐藏预览视图
+function DisPreView(obj) {
+    $obj = $(obj).parent().parent().parent();
+    $obj.hide().siblings(".subtitle").find("img").show();
+    $obj.find(".view_preimg").unbind('click');
+    $obj.find(".view_nextimg").unbind('click');
+}
+
+function RoteImg(id, option) {
+    var angle = 0;
+    if (option == 1)
+        angle = $('#' + id).data("angle") - 90;
+    else
+        angle = $('#' + id).data("angle") + 90;
+    $('#' + id).data("angle", angle);
+    $('#' + id).rotate(angle);
+}
+var ViewDiag = new ZL_Dialog();
+function ViewImg(id) {
+    ViewDiag.width = "tie_viewImg";
+    ViewDiag.title = "图片预览";
+    ViewDiag.url = "/Common/PreView/PicView.aspx?ID=" + id;
+    ViewDiag.maxbtn = false;
+    ViewDiag.ShowModal();
+}
+
+var buser = new B_User();//会员ajax登录状态需要结合JS/Controls/B_User.js引用同步生效
+buser.IsLogged(function(data,flag){
+	if(flag)
+	{
+        data=JSON.parse(data);
+        //console.log(data);
+		$(".home_login").hide();
+        $(".home_logout a img").attr("src",data.UserFace);
+        $(".home_logout h4").html("欢迎您，"+data.UserName+"! <a href='/User/LogOut'>[退出]</a>");
+        $(".home_logout").show();
+        $(".home_unaddbar").hide();
+        $(".home_addbar").show();
+        $.post("/api/exapi.ashx?action=barinfo", {}, function (data) {
+            var model = APIResult.getModel(data);
+            if (APIResult.isok(model)) {
+                data = model.result;
+                $(".home_point").html("<img src='"+data.pg_icon+"'>");
+                $(".home_exp").html("积分："+data.point);
+                $(".home_purse").html("金币："+data.purse);
+                var para1 = {
+                    key:'',
+                    alias:'pointGrounp',
+                    psize:'10',
+                    cpage:1,
+                    cate:1,
+                    point:data.point
+                }
+                $.post("/API/Center.ashx?action=GetCustom",para1,function(data){
+                    data=JSON.parse(data);
+                    if(data.result!="[]"){
+                        data=JSON.parse(data.result);
+                        console.log(data);
+                        $(".home_dj").html("距 ["+data[0].groupname+"] 还需 "+data[0].val+" 积分");
+                    }else{
+                        $(".home_dj").html("无法再突破了！");
+                    }
+                });
+            }
+            else { console.log("err", model.retmsg); }
+        });
+	}
+});
+
+
+function LoginFun()
+{
+	var buser = new B_User();
+	var model = { name: $("#UName").val(), pwd: $("#UPSD").val(), key: $("#VCode_hid").val(), code: $("#VCode").val() };
+	if (model.name == "" || model.pwd == "")
+	{
+		$("#UName").popover({
+			animation: true,
+			placement: 'top',
+			content: '<span style="color:red;">用户名或密码不能为空</span>',
+			html: true,
+			trigger:'manual',
+			delay: { show: 10000, hide: 100 }
+		});
+		$("#UName").popover('show');
+		setTimeout(function () { $("#UName").popover('destroy'); }, 2000);
+		return;
+	}
+	$("#home_ulogin_btn").attr('disabled', 'disabled');
+	$("#home_ulogin_btn").val('登录中...');
+	buser.Login(model, function (data) {
+		$("#home_ulogin_btn").removeAttr('disabled');
+		$("#home_ulogin_btn").val('登录');
+		if (data == -1) {
+			$("#UPSD").popover({
+				animation: true,
+				placement: 'top',
+				content: '<span style="color:red;">用户名或密码错误</span>',
+				html: true,
+				trigger: 'manual',
+				delay: { show: 10000, hide: 100 }
+			});
+			$("#UPSD").popover('show');
+			setTimeout(function () { $("#UPSD").popover('destroy'); }, 2000);
+		}
+		else if (data == -10) {
+			$("#UPSD").popover({
+				animation: true,
+				placement: 'top',
+				content: '<span style="color:red;">用户名或密码错误</span>',
+				html: true,
+				trigger: 'manual',
+				delay: { show: 10000, hide: 100 }
+			});
+			$("#UPSD").popover('show');
+			setTimeout(function () { $("#UPSD").popover('destroy'); }, 2000);
+			EnableCode();
+		}
+		else if (data == -2) {
+			EnableCode();
+			$("#VCode").popover({
+				animation: true,
+				placement: 'top',
+				content: '<span style="color:red;">验证码错误</span>',
+				html: true,
+				trigger: 'manual',
+				delay: { show: 10000, hide: 100 }
+			});
+			$("#VCode").popover('show');
+			setTimeout(function () { $("#VCode").popover('destroy'); }, 2000);
+		}
+		else {
+            //此处写登录成功后需要执行的事件
+            data=JSON.parse(data);
+			$(".home_login").hide();
+            $(".home_logout a img").attr("src",data.UserFace);
+            $(".home_logout h4").html("欢迎您，"+data.UserName+"! <a href='/User/LogOut'>[退出]</a>");
+            $(".home_logout").show();
+            $(".home_unaddbar").hide();
+            $(".home_addbar").show();
+            $.post("/api/exapi.ashx?action=barinfo", {}, function (data) {
+                var model = APIResult.getModel(data);
+                if (APIResult.isok(model)) {
+                    data = model.result;
+                    console.log(data);
+                    $(".home_point").html("<img src='"+data.pg_icon+"'>");
+                    $(".home_exp").html("积分："+data.point);
+                    $(".home_purse").html("金币："+data.purse);
+                    var para1 = {
+                        key:'',
+                        alias:'pointGrounp',
+                        psize:'10',
+                        cpage:1,
+                        cate:1,
+                        point:data.point
+                    }
+                    $.post("/API/Center.ashx?action=GetCustom",para1,function(data){
+                        data=JSON.parse(data);
+                        if(data.result!="[]"){
+                            data=JSON.parse(data.result);
+                            $(".home_dj").html("距 ["+data[0].groupname+"] 还需 "+data[0].val+" 积分");
+                        }else{
+                            $(".home_dj").html("无法再突破了！");
+                        }
+                    });
+                    
+                }
+                else { console.log("err", model.retmsg); }
+            });
+		}
+	});
+}
+
+//会员ajax登录状态需要结合JS/Controls/B_User.js引用同步生效
+var buser = new B_User();
+buser.IsLogged(function(data,flag){
+	if(flag)
+	{
+		data=JSON.parse(data)
+		$(".user_login").hide();
+		$(".user_reg").hide();
+		$(".user_cen").html("欢迎您,"+data.UserName+"!");
+		$(".user_cen").show();
+		$(".user_logout").show();
+	}
+});
+function LogoutFun()
+{
+	buser.Logout(function(){location=location;});
+};
+
+
+/*获取验证码*/
+function GetEnterCode(a, id) {
+    if (event.keyCode == 13) {
+        switch (a) { case "click": $("#" + id).trigger("click"); break; case "focus": $("#" + id).focus(); break; }
+        return false;
+    }
+    else { return true; }
+}
+
+/*百度编辑器*/
+<!--[if lt IE 7]> setTimeout(function () { <![endif]-->
+UE.getEditor('txt_test', {
+	toolbars: [['insertimage', 'insertvideo','emotion','attachment']]
+});
+<!--[if lt IE 7]> }, 300);<![endif]-->
+
+/*签到*/
+function SinIn(e){
+    $.ajax({
+        url: "/API/UserSinIn.ashx",
+        data:{action:"sinin",localtion:"1"},
+        type:"POST",
+        success:function(d){
+            console.log(d)
+            if(d != "" && d != "-1") {
+                $(e).html("已签到").attr("onclick","");
+                $(".home_sign .media-body p").html("已连续签到"+d+"天");
+            }else if(d=="-1"){
+                alert("请先登录！")
+            }
+        }
+    });
+}
+
+
+$().ready(function(e) {
+    $.ajax({
+        url: "/API/UserSinIn.ashx",
+        data: {action:"sinstatu",localtion:"1"},
+        type: "POST",
+        success: function (d) {
+            if (d != "none") {
+                $(".home_sign .media-body p").html("已连续签到"+d+"天");
+                $(".home_sign .media-body a").html("已签到").attr("onclick","");
+            }
+        }
+    });
+});
+
+$(".show_more").click(function(){
+    var str="";
+    var cateid=$(this).parent("div").data("id");
+    var cPage=parseInt($(this).parent("div").find("input").val())+1;
+    var para = {
+	key:'',
+	alias:'guestlist',
+	psize:'20',
+	cpage:cPage,
+	cate:1,
+	CateID:cateid
+	}
+	$.post("/API/Center.ashx?action=GetCustom",para,function(data){
+		data=JSON.parse(data);
+        if(data.result!="[]"){
+            data=JSON.parse(data.result);
+            for(var i=0;i<data.length;i++){
+                str+='<div class="tie_list"><div class="checks"><div class="rcountnum"><span class="margin-right5">'+data[i].hitcount+'</span></div></div><div class="subdiv"><div><a href="/PItem?id='+data[i].id+'">'+data[i].title+'</a> <span></span></div><div id="sub_div_'+data[i].id+'" class="subtitle" data-id="'+data[i].id+'">  '+data[i].subtitle+'</div><div id="sub_video_div_'+data[i].id+'" style="display: none;"><div class="font12"><span><span class="fa fa-upload"></span><a href="javascript:;" onclick="Collapse();">收起</a></span></div><div class="video_div"></div></div><div id="sub_qvideo_div_'+data[i].id+'" style="display: none;"><div class="font12"><span><span class="fa fa-upload"></span><a href="javascript:;" onclick="Collapse()">收起</a><span class="sperspan">|</span></span><span><span class="fa fa-th-large"></span><a class="fullscreen_href" href="#">全屏</a></span></div><div class="qvideo_div"></div></div><div id="view_div_'+data[i].id+'" class="view_div" style="display: none;"><div class="font12"><span><span class="fa fa-upload"></span><a href="javascript:;" onclick="Collapse(\''+data[i].id+'\');">收起</a><span class="sperspan">|</span></span><span><i class="fa fa-mail-reply"></i><a href="javascript:;" onclick="RoteImg(\''+data[i].id+'\',1);">左转</a><span class="sperspan">|</span></span><span><i class="fa fa-mail-forward"></i><a href="javascript:;" onclick="RoteImg(\'view_img_'+data[i].id+'\',2);">右转</a><span class="sperspan">|</span></span><span><i class="fa fa-arrows-alt"></i><a href="javascript:;" onclick="ViewImg(\''+data[i].id+'\');">查看大图</a></span><button type="button" id="view_btn_'+data[i].id+'" onclick="Collapse()" style="display:none;"></button></div><div class="view_imgdiv"><div class="view_preimg"></div><div class="view_nextimg"></div><span><img id="view_img_'+data[i].id+'" data-angle="0" src="#" onclick="Collapse();"></span></div></div></div><div class="font12 tie_rel_count"><div><i class="fa fa-user"></i><a href="PostSearch?uid='+data[i].id+'"> '+data[i].cuname+'</a></div><div><i class="fa fa-comment"></i><a href="javascript:;"> '+data[i].r_cuname+'</a></div><span>'+data[i].cdate+'</span>  </div><div class="clearfix"></div></div>';
+            }
+        }else{
+            $(".home_tab .tab-content .active").find(".show_more").html("暂无更多信息...");
+        }
+        $(".home_tab .tab-content .active").find(".show_more").before(str);
+	});
+    $(this).parent("div").find("input").val(cPage);
+});
+
+function ChangeUrl(cateID){
+    if(cateID==28){$(".home_addbar").show();}
+    else{$(".home_addbar").hide();}
+    //$(".home_addbar form").attr("action","/Bar/Post_Add?cateid="+cateID+"&rurl=/");
+}
+
+$(".home_class li a").on('click',function(){
+    Act()
+});
+
+function Act(){
+    console.log($("#message").hasClass("active"));
+    if($("#message").hasClass("active")){
+        $(".fatie").show();
+    }else{
+        $(".fatie").hide();
+    }
+}
+</script>

@@ -1,0 +1,75 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>317</LabelID>
+    <LabelName>全站头部</LabelName>
+    <LabelType>1</LabelType>
+    <LabelCate>静态标签</LabelCate>
+    <LabelDesc />
+    <LabelParam />
+    <LabelTable />
+    <LabelField />
+    <LabelWhere />
+    <LabelOrder />
+    <LabelContent>
+&lt;div class="order_top visible-xs" style="background:#f8f8f8; height:2em;"&gt;
+&lt;div class="container"&gt;
+&lt;div class="pull-right"&gt;
+&lt;a href="/User/Login?ReturnUrl=/" class="user_login"&gt;登录&lt;/a&gt;
+&lt;a href="/User/Register" class="user_reg"&gt;注册&lt;/a&gt;
+&lt;a href="/User" class="user_cen"&gt;&lt;/a&gt;
+&lt;a href="javascript:;" onClick="LogoutFun();"  class="user_logout"&gt;退出&lt;/a&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="home_nav" id="home_nav"&gt;
+&lt;nav class="navbar navbar-default"&gt;
+&lt;div class="container"&gt;
+&lt;!-- Brand and toggle get grouped for better mobile display --&gt;
+&lt;div class="navbar-header"&gt;
+&lt;button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"&gt;
+&lt;span class="sr-only"&gt;Toggle navigation&lt;/span&gt;
+&lt;span class="icon-bar"&gt;&lt;/span&gt;
+&lt;span class="icon-bar"&gt;&lt;/span&gt;
+&lt;span class="icon-bar"&gt;&lt;/span&gt;
+&lt;/button&gt;
+&lt;a class="navbar-brand" href="/"&gt;&lt;img src="{$CssDir/}images/logo.svg" alt="{$SiteName/}"/&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;!-- Collect the nav links, forms, and other content for toggling --&gt;
+&lt;div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"&gt;
+&lt;ul class="nav navbar-nav"&gt;
+&lt;li class="active"&gt;&lt;a href="/"&gt;首页&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="{ZL:GetNodeLinkUrl(1)/}"&gt;官方新闻&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="{ZL:GetInfoUrl(2)/}"&gt;联系我们&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;form class="navbar-form navbar-left" role="search" action="/Search/SearchList"&gt;
+&lt;div class="input-group"&gt;
+&lt;input type="text" name="keyword" class="form-control" placeholder="请输入关键字"&gt;
+&lt;span class="input-group-btn"&gt;
+&lt;button class="btn" type="submit"&gt;&lt;i class="fa fa-search"&gt;&lt;/i&gt; 搜索&lt;/button&gt;
+&lt;/span&gt;
+&lt;/div&gt;&lt;!-- /input-group --&gt;
+&lt;/form&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;!-- /.navbar-collapse --&gt;
+&lt;/div&gt;&lt;!-- /.container-fluid --&gt;
+&lt;/nav&gt;
+&lt;/div&gt;
+&lt;!--头部结束--&gt;</LabelContent>
+    <LabelCount />
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>计数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue />
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType />
+    <ConnectString />
+    <ProceName />
+    <ProceParam />
+  </Table>
+</NewDataSet>

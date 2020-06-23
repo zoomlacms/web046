@@ -1,0 +1,73 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>316</LabelID>
+    <LabelName>首页输出贴吧列表_不分页</LabelName>
+    <LabelType>2</LabelType>
+    <LabelCate>夜场吧专用</LabelCate>
+    <LabelDesc />
+    <LabelParam>ShowNum,10,1, 显示数|CateID,0,1,板块ID|TitNum,30,1,标题长度</LabelParam>
+    <LabelTable>ZL_Guest_Bar</LabelTable>
+    <LabelField>Title,CDate,CUName,HitCount,R_CUName,Subtitle,ID,CUser</LabelField>
+    <LabelWhere>CateID=@CateID And Status=99 And Pid=0</LabelWhere>
+    <LabelOrder>ID DESC</LabelOrder>
+    <LabelContent>{Repeate}
+&lt;div class="tie_list"&gt;
+&lt;div class="checks"&gt;
+&lt;div class="rcountnum"&gt;&lt;span class="margin-right5"&gt;{Field="HitCount"/}&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="subdiv"&gt;
+&lt;div&gt;&lt;a style="" href="/PItem?id={Field="ID"/}"&gt;{ZL:CutText({Field="Title"/},@TitNum,...)/}&lt;/a&gt; &lt;span&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div id="sub_div_{Field="ID"/}" class="subtitle" data-id="{Field="ID"/}"&gt;
+  {Field="Subtitle"/}
+&lt;/div&gt;
+&lt;div id="sub_video_div_{Field="ID"/}" style="display: none;"&gt;
+&lt;div class="font12"&gt;
+&lt;span&gt;&lt;span class="fa fa-upload"&gt;&lt;/span&gt;&lt;a href="javascript:;" onclick="Collapse();"&gt;收起&lt;/a&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="video_div"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="sub_qvideo_div_{Field="ID"/}" style="display: none;"&gt;
+&lt;div class="font12"&gt;
+&lt;span&gt;&lt;span class="fa fa-upload"&gt;&lt;/span&gt;&lt;a href="javascript:;" onclick="Collapse()"&gt;收起&lt;/a&gt;&lt;span class="sperspan"&gt;|&lt;/span&gt;&lt;/span&gt;
+&lt;span&gt;&lt;span class="fa fa-th-large"&gt;&lt;/span&gt;&lt;a class="fullscreen_href" href="#"&gt;全屏&lt;/a&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="qvideo_div"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="view_div_{Field="ID"/}" class="view_div" style="display: none;"&gt;
+&lt;div class="font12"&gt;
+&lt;span&gt;&lt;span class="fa fa-upload"&gt;&lt;/span&gt;&lt;a href="javascript:;" onclick="Collapse('{Field="ID"/}');"&gt;收起&lt;/a&gt;&lt;span class="sperspan"&gt;|&lt;/span&gt;&lt;/span&gt;
+&lt;span&gt;&lt;i class="fa fa-mail-reply"&gt;&lt;/i&gt;&lt;a href="javascript:;" onclick="RoteImg('view_img_{Field="ID"/}',1);"&gt;左转&lt;/a&gt;&lt;span class="sperspan"&gt;|&lt;/span&gt;&lt;/span&gt;
+&lt;span&gt;&lt;i class="fa fa-mail-forward"&gt;&lt;/i&gt;&lt;a href="javascript:;" onclick="RoteImg('view_img_{Field="ID"/}',2);"&gt;右转&lt;/a&gt;&lt;span class="sperspan"&gt;|&lt;/span&gt;&lt;/span&gt;
+&lt;span&gt;&lt;i class="fa fa-arrows-alt"&gt;&lt;/i&gt;&lt;a href="javascript:;" onclick="ViewImg('{Field="ID"/}');"&gt;查看大图&lt;/a&gt;&lt;/span&gt;
+&lt;button type="button" id="view_btn_{Field="ID"/}" onclick="Collapse()" style="display:none;"&gt;&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class="view_imgdiv"&gt;&lt;div class="view_preimg"&gt;&lt;/div&gt;&lt;div class="view_nextimg"&gt;&lt;/div&gt;&lt;span&gt;&lt;img id="view_img_{Field="ID"/}" data-angle="0" src="#" onclick="Collapse();"&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="font12 tie_rel_count"&gt;
+&lt;div&gt;&lt;i class="fa fa-user"&gt;&lt;/i&gt;&lt;a href="PostSearch?uid={Field="CUser"/}"&gt;{ZL.Label id="根据会员ID输出会员名" UID="{Field="CUser"/}" /} &lt;/a&gt;&lt;/div&gt;
+&lt;div&gt;
+{ZL.Label id="根据主帖ID传出最新回帖ID" PID="{Field="ID"/}" /}&lt;/a&gt;
+&lt;/div&gt;
+&lt;span&gt;&lt;/span&gt;  
+&lt;/div&gt;
+&lt;div class="clearfix"&gt;&lt;/div&gt;
+&lt;/div&gt;
+{/Repeate}</LabelContent>
+    <LabelCount>@ShowNum</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>计数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue />
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType>{"ds_m":"main","ds_s":"main","tb_m":"ZL_Guest_Bar","tb_s":""}</DataSourceType>
+    <ConnectString />
+    <ProceName />
+    <ProceParam />
+  </Table>
+</NewDataSet>

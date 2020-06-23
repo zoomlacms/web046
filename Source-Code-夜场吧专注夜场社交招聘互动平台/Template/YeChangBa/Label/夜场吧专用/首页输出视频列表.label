@@ -1,0 +1,35 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>321</LabelID>
+    <LabelName>首页输出视频列表</LabelName>
+    <LabelType>2</LabelType>
+    <LabelCate>夜场吧专用</LabelCate>
+    <LabelDesc />
+    <LabelParam>NodeID,0,1,节点ID|ShowNum,10,1,显示数</LabelParam>
+    <LabelTable>ZL_CommonModel LEFT JOIN ZL_C_video ON ZL_CommonModel.ItemID=ZL_C_video.ID</LabelTable>
+    <LabelField>GeneralID,NodeID,Title,pic,url</LabelField>
+    <LabelWhere>(NodeID=@NodeID or FirstNodeID=@NodeID) And Status=99</LabelWhere>
+    <LabelOrder>CreateTime DESC</LabelOrder>
+    <LabelContent>{Repeate}
+&lt;li&gt;
+&lt;a href="{ZL:GetInfoUrl({Field="GeneralID"/})/}"&gt;
+&lt;img src="{ZL:GetPicUrl({Field="pic"/})/}" alt="{Field="Title"/}" onerror="javascript:this.src='/UploadFiles/nopic.gif'" /&gt;
+&lt;p&gt;{Field="Title"/}&lt;/p&gt;
+&lt;/a&gt;
+&lt;/li&gt;
+{/Repeate}</LabelContent>
+    <LabelCount>@ShowNum</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>计数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue />
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType>{"ds_m":"main","ds_s":"main","tb_m":"ZL_CommonModel","tb_s":"ZL_C_video"}</DataSourceType>
+    <ConnectString />
+  </Table>
+</NewDataSet>
